@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container" style="background-color: white;max-height: 600px;overflow-y: auto;">
+  <h1>Liste</h1>
+  <hr>
+  <h3>Ce tableau indique la liste des actualités recement poster:</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>titre</th>
+        <th>auteur</th>
+        <th>description</th>
+        <th>date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of this.articles" >
+        <td>{{article.id}}</td>
+        <td>{{article.titre}}</td>
+        <td>{{article.auteur}}</td>
+        <td>{{article.description}}</td>
+        <td>{{article.date}}</td>
+        <td><span class="fa fa-edit" style="color: blue;"></span></td>
+        <td><button style="border: none; background-color: rgba(0, 0, 0, 0);"><span class="fa fa-trash" style="color: red;" (click)="this.SupprimerArticle(article.id)"></span></button></td>
+      </tr>
+    </tbody>
+  </table>

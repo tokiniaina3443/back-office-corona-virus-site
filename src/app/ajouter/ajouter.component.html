@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="container" style="background-color: white;">
+  <h1>Poster article</h1>
+  <hr>
+  <div style="padding: 0% 2% 2% 2%;">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="fname">Titre</label>
+        <input type="text"  placeholder="titre" [(ngModel)]="this.titre">
+      </div>
+      <div class="col-md-4">
+        <label for="fname">Auteur</label>
+        <input type="text"  placeholder="auteur" [(ngModel)]="this.auteur">
+      </div>
+      <div class="col-md-4">
+        <label for="fname">date</label>
+        <input type="date"  [(ngModel)]="this.date">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="fname">Description</label>
+        <input type="text"  placeholder="description" [(ngModel)]="this.description">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="fname">Illustration</label>
+        <input type="file" (change)="toBase64($event)">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="fname">Objet</label>
+        <textarea class="form-control" placeholder="votre texte" [(ngModel)]="this.objet"></textarea>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 2%;">
+      <div  role="alert" id="message" style="display: none;">
+        A simple success alert—check it out!
+      </div>
+      <!-- <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 2%;">
+        <button class="btn btn-primary" style="width: 20%;" (click)="this.PosterArticel()" id="mybutton">Publier</button>
+        <button class="btn btn-primary" type="button" style="width: 20%;display: none;" id="load" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          patienter...
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
